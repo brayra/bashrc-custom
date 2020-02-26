@@ -38,6 +38,11 @@ setmyaliases()
     alias histOff='set +o history'
 
     unset -f setmyaliases
+		
+		#df changed due to new default df behavior including memory filesystems.
+		alias df='df -x tmpfs -x squashfs -x devtmpfs'
+
+		alias wget-='wget -q -O -'
 }
 
 setmyaliases
