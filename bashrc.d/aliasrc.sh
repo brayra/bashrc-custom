@@ -41,8 +41,14 @@ setmyaliases()
 		
 		#df changed due to new default df behavior including memory filesystems.
 		alias df='df -x tmpfs -x squashfs -x devtmpfs'
+		alias mounts='cat /proc/mounts|cut -f1-3 -d" "|egrep -v "(squashfs|tmpfs|autofs|cgroup|cgroup2|devpts|proc|sysfs|tracefs|fusectl|fuse|fuse.gvfsd-fuse|configfs|rpc_pipefs|mqueue|pstore|securityfs|nsfs|debugfs|hugetlbfs)$"'
 
-		alias wget-='wget -q -O -'
+		alias hidestr="tr '[:alnum:]' 'x'"
+		alias wgetraw="wget -q -O - "
+
+		alias allservices="systemctl list-units --type=service"
+
+		alias myplaybook="ansible-playbook --ask-vault-pass"
 }
 
 setmyaliases

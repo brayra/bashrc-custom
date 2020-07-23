@@ -145,5 +145,5 @@ setEnvVars
 __bashincludedir="$( dirname "${BASH_SOURCE}" )/bashrc.d"
 # find all files in sub-dir to include
 # use sed command to make sure all files end in newline
-source <( find "${__bashincludedir}" -type f -name "*rc.sh" -exec sed -e '$s/$/\n/' "{}" \;)
+source <( find "${__bashincludedir}" -type f -name "*.sh" -exec sed -e '$s/$/\n/' "{}" \;)
 unset __bashincludedir
