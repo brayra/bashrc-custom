@@ -138,6 +138,10 @@ bashSettings()
 detectDistro  # must do this before loading all bash sub-files
 setEnvVars
 
+# we don't want to share with microsoft.
+export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT=1
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
 ############# INCLUDE SCRIPTS *****************************
 # source all scripts in the bashrc.d directory in the same
 # path as this script named 'bashrc.d/*rc.sh'
