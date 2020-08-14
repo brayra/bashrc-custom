@@ -49,6 +49,8 @@ setmyaliases()
 		alias allservices="systemctl list-units --type=service"
 
 		alias myplaybook="ansible-playbook --ask-vault-pass"
+
+		alias tvars="env|egrep '^(back|ARM|TF)'|sort"
 }
 
 setmyaliases
