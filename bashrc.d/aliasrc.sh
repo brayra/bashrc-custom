@@ -49,8 +49,14 @@ setmyaliases()
 		alias allservices="systemctl list-units --type=service"
 
 		alias myplaybook="ansible-playbook --ask-vault-pass"
+		alias askplaybook="ansible-playbook -K"
 
 		alias tvars="env|egrep '^(back|ARM|TF)'|sort"
+
+		alias view-cert="openssl x509 -text -noout -in "
+
+		show_config() { cat "$1" |sed 's/=.*$/= ######/g'|sed 's/:.*$/: "####"/g'; }
+
 }
 
 setmyaliases
