@@ -57,6 +57,22 @@ setmyaliases()
 
 		show_config() { cat "$1" |sed 's/=.*$/= ######/g'|sed 's/:.*$/: "####"/g'; }
 
+		# convert a column of two alternating things into a two column table
+    one2two() {
+			awk '{printf "%s" (NR%2==0?RS:FS),$1} '
+		}
+
+		alias urldecode='python3 -c "import sys, urllib.parse as ul; \
+    print(ul.unquote_plus(sys.argv[1]))"'
+
+		alias urlencode='python3 -c "import sys, urllib.parse as ul; \
+    print (ul.quote_plus(sys.argv[1]))"'
+
+		# show git url
+		alias git-remote-url='git config --get remote.origin.url'
+
+		# upgrade pip modules
+		alias pip-upgrade="python -m pip list --user --outdated --format=freeze | cut -f 1 -d = | xargs -n 1 -- python -m pip install -U"
 }
 
 setmyaliases
