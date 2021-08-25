@@ -72,7 +72,8 @@ setmyaliases()
 		alias git-remote-url='git config --get remote.origin.url'
 
 		# upgrade pip modules
-		alias pip-upgrade="python -m pip list --user --outdated --format=freeze | cut -f 1 -d = | xargs -n 1 -- python -m pip install -U"
+		alias pip-upgrade="python -m pip list --user --format=freeze | cut -f 1 -d = | xargs -n 1 -- python -m pip install -U"
+		#alias pip-upgrade="python -m pip list --user --outdated --format=freeze | cut -f 1 -d = | xargs -n 1 -- python -m pip install -U"
 }
 
 setmyaliases
